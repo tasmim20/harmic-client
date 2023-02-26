@@ -1,9 +1,19 @@
 import React from 'react';
+import ArrivalProducts from '../ArrivalProducts/ArrivalProducts';
+import Processes from '../Processes/Processes';
+import Products from '../Products/Products';
+import Carosel from './Carosel';
+import Offers from './Offers/Offers';
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home</h2>
+            <Carosel></Carosel>
+            <Processes></Processes>
+            <Offers></Offers>
+            <Products></Products>
+            <ArrivalProducts></ArrivalProducts>
+
         </div>
     );
 };

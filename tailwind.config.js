@@ -6,6 +6,11 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'lime': '#bac34e',
+      'lightyellow': '#e2d8c3',
+      'bslight':'#fff',
+      'white':' #ffffff',
+      'light':'#fee4e7',
+      'black':'#333333'
    
     },
   },
