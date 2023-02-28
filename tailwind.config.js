@@ -10,7 +10,8 @@ module.exports = {
       'bslight':'#fff',
       'white':' #ffffff',
       'light':'#fee4e7',
-      'black':'#333333'
+      'black':'#333333',
+      'red':'#d3122a',
    
     },
   },
