@@ -3,6 +3,7 @@ import Login from "../Components/Authentication/Login/Login";
 import Register from "../Components/Authentication/Register/Register";
 import Blogs from "../Components/Blogs/Blogs";
 import Home from "../Components/Home/Home/Home";
+import Shops from "../Components/Shops/Shops";
 import AddBlogs from "../Dashboard/AddBlogs";
 import Dashboard from "../Dashboard/Dashboard";
 import ViewBlogs from "../Dashboard/ViewBlogs/ViewBlogs";
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path:'/blogs',
                 element:<Blogs></Blogs>
+            },
+            {
+                path:'/shop',
+                element:<PrivateRoute><Shops></Shops></PrivateRoute>
             },
             {
                 path:'/dashboard',
