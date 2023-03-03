@@ -8,13 +8,19 @@ import Section from './Section/Section';
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             <Carosel></Carosel>
+            <div className='  max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12'>
             <Processes></Processes>
-            <Offers></Offers>
+            
             <Products></Products>
+            </div>
+            <Offers></Offers>
             <Section></Section>
+            <div className='  p-6 mx-auto space-y-6 sm:space-y-12'>
             <ArrivalProducts></ArrivalProducts>
+            </div>
+            
 
         </div>
     );
