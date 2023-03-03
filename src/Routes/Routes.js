@@ -7,6 +7,7 @@ import AddBlogs from "../Dashboard/AddBlogs";
 import Dashboard from "../Dashboard/Dashboard";
 import ViewBlogs from "../Dashboard/ViewBlogs/ViewBlogs";
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
