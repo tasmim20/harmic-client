@@ -1,17 +1,17 @@
 import React from 'react';
-import product from '../../../Assets/Images/1_3ec7c91e-1742-4a93-8e66-2073547e4c43_600x600_crop_center.jpg';
 
-const Product = () => {
+
+const Product = ({item}) => {
     return (
         <div>
             <div className="card lg:w-64  bg-base-100  border border-light rounded-sm">
-  <figure className=' w-100 h-48 '><img className='' src={product} alt="Shoes" /></figure>
+  <figure className=' w-100 h-48 '><img className='transition duration-700 hover:scale-110' src={item.img} alt="Shoes" /></figure>
   <div className="card-body text-center">
-    <h2 className="text-xl">
-     Black Pepper Grains
+    <h2 className="text-xl  hover:text-lime">
+    {item.title}
      
     </h2>
-    <p className='text-sm'>$100.00</p>
+    <p className='text-sm'>{item.price}</p>
    
   </div>
 </div>

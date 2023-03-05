@@ -15,9 +15,10 @@ const Home = () => {
             
             <Products></Products>
             </div>
-            <Offers></Offers>
+           <div className='max-w-8xl  p-6 mx-auto space-y-6 sm:space-y-12  '> <Offers></Offers> </div>
+          
             <Section></Section>
-            <div className='  p-6 mx-auto space-y-6 sm:space-y-12'>
+            <div className=' max-w-7xl  p-6 mx-auto space-y-6 sm:space-y-12'>
             <ArrivalProducts></ArrivalProducts>
             </div>
             
