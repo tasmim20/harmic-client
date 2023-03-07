@@ -1,14 +1,15 @@
 import React from 'react';
 import bg from '../../../Assets/Images/1-1.jpg'
-import tomato from '../../../Assets/Images/1-3-601x534.png'
 import tomato2 from '../../../Assets/Images/2-1-601x426.png'
 
 const Carosel = () => {
     return (
         <div >
-           <div className="hero  bg-base-200 max-h-full" style={{backgroundImage:`url(${bg})`, minHeight:610}}>
+           <div className="hero  bg-base-200 max-h-full" style={{backgroundImage:`url(${bg})`, minHeight:685}}>
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={tomato2} className=" rounded-lg " />
+   <div className=' animate-wiggle'>
+   <img src={tomato2} className=" rounded-lg  " style={{animation:'floating 3s ease-in-out infinite'}} />
+   </div>
     <div className='font-hairline' >
         <p className='text-xl font-serif ' data-aos="fade-up" data-aos-duration="1000"
      >Natural & Organic</p>

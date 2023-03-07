@@ -24,7 +24,8 @@ const UpdateBlog = ({blog, handleUpdate}) => {
   
     <div className="modal-action">
       <label htmlFor="my-modal" className="btn btn-outline text-red  hover:bg-red hover:text-white rounded-none">Cancle</label>
-      <button type='submit' className='btn bg-black hover:text-white rounded-none border-none' onClick={() => handleUpdate(blog._id, update) }>Update</button>
+      <label htmlFor="my-modal" className="btn  bg-black hover:text-white rounded-none border-none" onClick={() => handleUpdate(blog._id, update) }>Update</label>
+      {/* <button type='submit' className='btn bg-black hover:text-white rounded-none border-none' onClick={() => handleUpdate(blog._id, update) }>Update</button> */}
     
     </div>
   </div>
