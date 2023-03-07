@@ -4,6 +4,8 @@ import bg from "../Assets/Images/1-1.jpg";
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 import axios from 'axios';
+import swal from 'sweetalert';
+import { toast } from 'react-hot-toast';
 
 
 const AddBlogs = () => {
@@ -22,7 +24,10 @@ const AddBlogs = () => {
         axios.post(`${url}/blogs`, newBlog)
         .then(res =>{
             if(res.data.success){
-                alert('Success');
+                // alert('Success');
+                // swal("WOW Greate!", "Blog create successfully!", "success");
+                toast.success('Blog Created Successfully!');
+            
             }
             else{
                 alert(res.data.message)

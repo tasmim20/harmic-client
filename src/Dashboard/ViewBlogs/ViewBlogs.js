@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import UpdateBlog from '../UpdateBlog/UpdateBlog';
+import swal from 'sweetalert';
+
+
 
 const ViewBlogs = () => {
 
@@ -34,6 +37,22 @@ const ViewBlogs = () => {
     axios.delete(`${url}/blogs/${id}`)
     .then(res => {
       if(res.data.success){
+        // swal({
+        //   title: "Are you sure?",
+        //   text: "You want to delete this Blog..??",
+        //   icon: "warning",
+        //   buttons: true,
+        //   dangerMode: true,
+        // })
+        // .then((willDelete) => {
+        //   if (willDelete) {
+        //     swal(" Your Blog has been deleted!", {
+        //       icon: "success",
+        //     });
+        //   } else {
+        //     swal("Your Blog is safe!");
+        //   }
+        // });
         const newState = viewBlogs.filter(item =>item._id !== id);
         setViewBlogs(newState);
       }

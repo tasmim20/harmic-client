@@ -3,6 +3,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import {GoogleAuthProvider} from 'firebase/auth';
+import swal from 'sweetalert';
+
+
 
 
 
@@ -40,7 +43,8 @@ const Login = () => {
         console.log(user);
         setSuccess(true);
         form.reset();
-        alert('successfully login')
+        // alert('successfully login')
+        swal("Good job!", "Successfully Login!", "success");
         navigate(from, {replace: true});
     })
     .catch(error => console.error(error))

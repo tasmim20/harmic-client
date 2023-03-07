@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import swal from 'sweetalert';
+
 
 const Register = () => {
 
@@ -40,6 +42,7 @@ const Register = () => {
            console.log(user);
            setSuccess(true);
            form.reset();
+           swal("Great job!", "Registration Complete!", "success");
            navigate('/');
        })
              
