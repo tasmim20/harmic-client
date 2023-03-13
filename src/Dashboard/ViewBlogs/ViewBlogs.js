@@ -12,6 +12,8 @@ const ViewBlogs = () => {
   const [viewBlogs, setViewBlogs] = useState([]);
   const [isChanged, setIsChanged] = useState(false);
 
+
+
   useEffect( () =>{
     if(user?.email){
       axios.get(`${url}/blogs/${user.email}`)
@@ -19,7 +21,7 @@ const ViewBlogs = () => {
     }
   },[url, user?.email])
 
- 
+ console.log(viewBlogs)
   //update blog
   const handleUpdate = (id, data) =>{
     console.log(id, data);
@@ -37,23 +39,7 @@ const ViewBlogs = () => {
     axios.delete(`${url}/blogs/${id}`)
     .then(res => {
       if(res.data.success){
-        // swal({
-        //   title: "Are you sure?",
-        //   text: "You want to delete this Blog..??",
-        //   icon: "warning",
-        //   buttons: true,
-        //   dangerMode: true,
-        // })
-        // .then((willDelete) => {
-        //   if (willDelete) {
-        //     swal(" Your Blog has been deleted!", {
-        //       icon: "success",
-        //     });
-        //   } else {
-        //     swal("Your Blog is safe!");
-        //   }
-        // });
-        const newState = viewBlogs.filter(item =>item._id !== id);
+       const newState = viewBlogs.filter(item =>item._id !== id);
         setViewBlogs(newState);
       }
     })
@@ -62,7 +48,7 @@ const ViewBlogs = () => {
 
 
     return (
-        <div className='my-20 container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12'>
+        <div className='pt-32 container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12'>
          <div className="overflow-x-auto">
   <table className="table table-compact w-full">
     <thead>
@@ -77,15 +63,7 @@ const ViewBlogs = () => {
       </tr>
     </thead> 
     <tbody className='bg-light'>
-      {/* <tr>
-        <th>1</th> 
-        <td>Cy Ganderton</td> 
-        <td>Quality Control Specialist</td> 
-        <td>Littel, Schaden and Vandervort</td> 
-        <td>Canada</td> 
-        <td>12/16/2020</td> 
-        
-      </tr> */}
+     
       {viewBlogs.map((row) =>(
              <tr key={row._id}>
              <th></th> 
