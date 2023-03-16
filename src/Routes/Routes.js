@@ -3,6 +3,8 @@ import Login from "../Components/Authentication/Login/Login";
 import Register from "../Components/Authentication/Register/Register";
 import Blogs from "../Components/Blogs/Blogs";
 import Home from "../Components/Home/Home/Home";
+import Categories from "../Components/Home/SelectedSection/Categories";
+import Items from "../Components/Home/SelectedSection/Items";
 import Shops from "../Components/Shops/Shops";
 import AddBlogs from "../Dashboard/AddBlogs";
 import Dashboard from "../Dashboard/Dashboard";
@@ -17,7 +19,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path:'/',
-                element: <Home></Home>
+                element: <Home></Home>, 
             },
             {
                 path:'/login',
@@ -31,9 +33,11 @@ export const router = createBrowserRouter([
                 path:'/blogs',
                 element:<Blogs></Blogs>
             },
+            
             {
-                path:'/shop',
+                path:'/shops',
                 element:<PrivateRoute><Shops></Shops></PrivateRoute>
+               
             },
             {
                 path:'/dashboard',
@@ -46,6 +50,18 @@ export const router = createBrowserRouter([
             {
                 path:'/viewBlogs',
                 element:<ViewBlogs></ViewBlogs>
+            },
+            {
+                path:'/categories',
+                element:<Categories></Categories>,
+                
+              
+            },
+            {
+                path:'/items',
+                element:<Items></Items>,
+          
+              
             },
             {
                 

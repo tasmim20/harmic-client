@@ -14,8 +14,9 @@ const Navbar = () => {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+            <li><Link to='/'>Home</Link></li>
             <li><Link to='/blogs'>Blogs</Link></li>
-            <li><Link to='/shop'>Shop</Link></li>
+            <li><Link to='/shops'>Shops</Link></li>
             {
           user?.uid ? 
           <>
@@ -45,8 +46,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex text-white font-semibold">
           <ul className="menu menu-horizontal px-1">
+          <li><Link to='/'>Home</Link></li>
           <li><Link to='/blogs' className=''>Blogs</Link></li>
-          <li><Link to='/shop'>Shop</Link></li>
+          <li><Link to='/shops'>Shops</Link></li>
+         
           <span className="indicator-item text-sm badge badge-error bg-red text-white rounded-none -ml-12">NEW</span> 
            {/* <div className="badge badge-error bg-red text-white text-sm rounded-none">NEW</div> */}
            {

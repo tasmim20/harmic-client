@@ -12,6 +12,10 @@ import swal from 'sweetalert';
 const Login = () => {
   const [success, setSuccess] = useState(false);
   const {signIn, providerLogin} = useContext(AuthContext);
+  const [error, setError] = useState('');
+
+
+
   const googleProvider = new GoogleAuthProvider()
   const navigate = useNavigate();
   const location =  useLocation();
@@ -47,14 +51,18 @@ const Login = () => {
         swal("Good job!", "Successfully Login!", "success");
         navigate(from, {replace: true});
     })
-    .catch(error => console.error(error))
+    .catch(error => {
+      console.error(error)
+      setError(error.message);
+     
+    })
   }
 
 
     return (
      <div>
-        <h2 className='text-4xl font-bold mt-10 text-center text-lime'>SHOP HERE</h2>
-         <div className='flex justify-center text-black mb-14 mt-10'>
+      
+         <div className='flex justify-center text-black mb-14 py-28 '>
            <div className="card w-full max-w-lg shadow-2xl bg-green-50">
       <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
@@ -84,9 +92,10 @@ const Login = () => {
       <button onClick={handleGoogleSignIn} className="btn btn-outline hover:bg-black text-lime hover:text-white text-bold w-full mx-4"><p className='px-2 text-lime '><FaGoogle className='text-lime text-lg'></FaGoogle></p > Login with google</button>
        
         </div>
+        <p className='text-red text-center font-semibold'>{error}</p>
        <div className='flex justify-around mb-6 mx-8'>
        <p>Need an account..?</p>
-           <p> <Link to='/register' className=" font-semibold text-red">Register</Link></p>
+           <p> <Link to='/register' className=" font-semibold hover:link-hover text-blue">Register</Link></p>
        </div>
     </div>
         </div>

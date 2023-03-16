@@ -56,7 +56,7 @@ const Register = () => {
 
 
    return (
-       <div className='flex justify-center text-black py-20'>
+       <div className='flex justify-center text-black py-28'>
        <div className="card w-full max-w-lg shadow-2xl bg-green-50">
        <h1 className='font-bold text-4xl text-center pt-6 '>Create An Account</h1>
   <form onSubmit={handleSignUp} className="card-body">

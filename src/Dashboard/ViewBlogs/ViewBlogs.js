@@ -19,7 +19,7 @@ const ViewBlogs = () => {
       axios.get(`${url}/blogs/${user.email}`)
       .then(res => setViewBlogs(res.data.result))
     }
-  },[url, user?.email])
+  },[url,isChanged, user?.email])
 
  console.log(viewBlogs)
   //update blog
@@ -28,6 +28,7 @@ const ViewBlogs = () => {
     axios.put(`${url}/blogs/${id}`, {title: data})
     .then(res => {
       if(res.data.success){
+        console.log(res.data);
         setIsChanged(!isChanged);
       }
     })
