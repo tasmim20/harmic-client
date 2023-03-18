@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Blog = ({blog}) => {
     const {title,image, date, description} = blog;
@@ -9,7 +10,14 @@ const Blog = ({blog}) => {
   <div className="card-body">
   <span className="text-xs dark:text-gray-400">{date}</span>
     <h2 className="card-title">{title}</h2>
-    <p>{description}</p>
+    <div>
+    {
+                description.length > 50 ?
+             <p>{description.slice(0, 100) + '...'} <Link className='text-blue text-sm' to='/'>Read more</Link></p>
+               :
+                <p>{description}</p>
+            }
+    </div>
     
   </div>
 </div>
