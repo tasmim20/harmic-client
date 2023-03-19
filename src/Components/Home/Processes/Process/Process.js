@@ -2,7 +2,7 @@ import React from 'react';
 import earphones from '../../../../Assets/Images/earphones.png'
 
 const Process = ({item}) => {
-    console.log(item)
+    // console.log(item)
     return (
         <div>
             

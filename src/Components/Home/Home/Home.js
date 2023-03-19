@@ -16,7 +16,7 @@ const Home = () => {
     const [categories, setCategories] = useState([]);
     const [items, setItems] = useState([])
 
-    console.log(categories);
+    // console.log(categories);
 
     useEffect(() =>
     {
@@ -42,7 +42,7 @@ const Home = () => {
                 <Categories setItems={setItems} categories={categories}></Categories>
             </div>
             <div className='max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12'>
-               <Items items={items}></Items>
+               <Items items={items} key={items.id}></Items>
             </div>
          
 

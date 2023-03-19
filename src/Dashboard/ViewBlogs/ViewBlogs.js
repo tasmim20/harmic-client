@@ -21,7 +21,7 @@ const ViewBlogs = () => {
     }
   },[url,isChanged, user?.email])
 
- console.log(viewBlogs)
+//  console.log(viewBlogs)
   //update blog
   const handleUpdate = (id, data) =>{
     console.log(id, data);
@@ -65,17 +65,19 @@ const ViewBlogs = () => {
     </thead> 
     <tbody className='bg-light'>
      
-      {viewBlogs.map((row) =>(
-             <tr key={row._id}>
-             <th></th> 
-             <td>{row.date}</td> 
-             <td>{row.authorEmail}</td> 
-             <td>{row.title}</td> 
-             <td><UpdateBlog blog={row} handleUpdate={handleUpdate} className="btn bg-lime hover:bg-black hover:text-white rounded-none border-none"></UpdateBlog></td> 
-             <td><button onClick={() =>handleDelete(row._id)} className="btn bg-red hover:bg-black hover:text-white rounded-none border-none">Delete</button></td> 
-             
-           </tr>
-      ))}
+
+       {viewBlogs?.length!== 0 && viewBlogs?.map((row) =>(
+        <tr key={row._id}>
+        <th></th> 
+        <td>{row.date}</td> 
+        <td>{row.authorEmail}</td> 
+        <td>{row.title}</td> 
+        <td><UpdateBlog blog={row} handleUpdate={handleUpdate} className="btn bg-lime hover:bg-black hover:text-white rounded-none border-none"></UpdateBlog></td> 
+        <td><button onClick={() =>handleDelete(row._id)} className="btn bg-red hover:bg-black hover:text-white rounded-none border-none">Delete</button></td> 
+        
+      </tr>
+ ))}
+
  
    
       
